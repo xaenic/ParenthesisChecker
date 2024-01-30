@@ -28,11 +28,12 @@ public class ParenthesisChecker{
         return myStack.isEmpty();
     }
     public static boolean isPair(Object x, Object y) {
+       String openings = "<>(){}[]";
         if(x == null)
             return false;
 
         String pair = x.toString() + y.toString();
-        return pair.equals("<>") || pair.equals("()") || pair.equals("{}") || pair.equals("[]");
+        return openings.contains(pair);
     }
     static public void main(String ...args){
         try {
